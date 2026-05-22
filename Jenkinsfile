@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh '''
+                    bat '''
                         sleep 15
                         curl -f http://localhost:5001/health
                         curl -f http://localhost/ || exit 1
@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'docker-compose up -d --build'
+                    bat 'docker-compose up -d --build'
                 }
             }
         }
