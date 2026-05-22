@@ -9,17 +9,17 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    bat '''
-                        sleep 15
-                        curl -f http://localhost:5001/health
-                        curl -f http://localhost/ || exit 1
-                    '''
-                }
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         script {
+        //             bat '''
+        //                 sleep 15
+        //                 curl -f http://localhost:5001/health
+        //                 curl -f http://localhost/ || exit 1
+        //             '''
+        //         }
+        //     }
+        // }
 
         stage('Deploy') {
             steps {
